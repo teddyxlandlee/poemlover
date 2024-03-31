@@ -1,0 +1,39 @@
+Goal: let players see the End Poem **every time** they go through the
+ exit portal
+
+Side: Client only
+
+Targeted users: >=1.18.2, Fabric/Forge/Quilt/Neo
+
+Why is it available on clients:
+ When jumping into the portal, server simply sends a packet:
+ `ClientboundGameEventPacket.WIN_GAME(param: float)`. It is client that
+ decides to respawn immediately when `param` in [-0.5, 0.5), or see the poem and respawn
+ on close when `param` in [0.5, 1.5). In short, it is client that decides when to respawn
+ (according to `param` value in Vanilla clients).
+
+To hack the client:
+ Find ClientPacketListener#handleGameEvent. clientboundGameEventPacket refers to arg1.
+ Redirect clientboundGameEventPacket.getParam(): when
+  clientboundGameEventPacket.getEvent() equals `WIN_GAME`, return `1.1451F`
+
+Mappings (using MojMaps as main):
+ | int | intermediary   |
+ | srg | srg above 1.17 |
+ Checked availability at 1.18.2 and 1.20.4 via Linkie
+
+ net.minecraft.network.protocol.game.ClientboundGameEventPacket.getParam:()F
+  int: net.minecraft.class_2668.method_11492:()F
+  srg: net.minecraft.network.protocol.game.ClientboundGameEventPacket.m_132181_:()F
+
+ net.minecraft.network.protocol.game.ClientboundGameEventPacket.getEvent:()Lnet/minecraft/network/protocol/game/ClientboundGameEventPacket$Type;
+  int: net.minecraft.class_2668.method_11491:()Lnet/minecraft/class_2668$class_5402;
+  srg: net.minecraft.network.protocol.game.ClientboundGameEventPacket.m_132178_:()Lnet/minecraft/network/protocol/game/ClientboundGameEventPacket$Type;
+
+ net.minecraft.network.protocol.game.ClientboundGameEventPacket.WIN_GAME:Lnet/minecraft/network/protocol/game/ClientboundGameEventPacket$Type;
+  int: net.minecraft.class_2668.field_25649:Lnet/minecraft/class_2668$class_5402;
+  srg: net.minecraft.network.protocol.game.ClientboundGameEventPacket.f_132157_:Lnet/minecraft/network/protocol/game/ClientboundGameEventPacket$Type;
+
+ net.minecraft.client.multiplayer.ClientPacketListener.handleGameEvent:(Lnet/minecraft/network/protocol/game/ClientboundGameEventPacket;)V
+  int: net.minecraft.class_634.method_11085:(Lnet/minecraft/class_2668;)V
+  srg: net.minecraft.client.multiplayer.ClientPacketListener.m_7616_:(Lnet/minecraft/network/protocol/game/ClientboundGameEventPacket;)V

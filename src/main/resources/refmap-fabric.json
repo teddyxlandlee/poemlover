@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "xland/mcmod/poemlover/mixin/Stub": {
+      "net.minecraft.client.multiplayer.ClientPacketListener": "net.minecraft.class_634"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "xland/mcmod/poemlover/mixin/Stub": {
+        "net.minecraft.client.multiplayer.ClientPacketListener": "net.minecraft.class_634"
+      }
+    }
+  }
+}

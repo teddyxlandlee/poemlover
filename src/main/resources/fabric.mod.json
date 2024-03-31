@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "poemlover",
+  "version": "${version}",
+  "name": "Poem Lover",
+  "description": "I love poems, so I want it to be displayed every time",
+  "authors": [
+    "teddyxlandlee"
+  ],
+  "contact": {},
+  "license": "LGPL-3.0",
+  "icon": "assets/end_poem_extension/icon.png",
+  "environment": "client",
+  "mixins": [
+    "poemlover.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14-",
+    "minecraft": ">=1.18 <1.21"
+  }
+}
