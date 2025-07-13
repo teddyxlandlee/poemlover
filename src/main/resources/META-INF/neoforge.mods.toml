@@ -7,9 +7,9 @@ modId = 'poemlover'
 version = "${version}"
 displayName = "Poem Lover"
 description = 'I love poems, so I want it to be displayed every time'
-modUrl = 'https://modrinth.com/mod/poemlover'
+modUrl = 'https://modrinth.com/mod/poem-lover'
 authors = 'teddyxlandlee'
-displayURL = 'https://modrinth.com/mod/poemlover'
+displayURL = 'https://modrinth.com/mod/poem-lover'
 
 [[mixins]]
 config = 'poemlover.mixins.json'
