@@ -7,7 +7,6 @@ import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 import java.util.function.Consumer;
 
@@ -32,7 +31,6 @@ public class ThePlugin implements IMixinConfigPlugin {
 
     @Override
     public void acceptTargets(Set<String> myTargets, Set<String> otherTargets) {
-
     }
 
     @Override
@@ -60,10 +58,10 @@ public class ThePlugin implements IMixinConfigPlugin {
     private static final String[] NEO, FABRIC, FORGE;
     static {
     	NEO = new String[] {
-    		"net.minecraft.network.protocol.game.ClientboundGameEventPacket.getParam:()F",
-    		"net.minecraft.network.protocol.game.ClientboundGameEventPacket.getEvent:()Lnet/minecraft/network/protocol/game/ClientboundGameEventPacket$Type;",
-    		"net.minecraft.network.protocol.game.ClientboundGameEventPacket.WIN_GAME:Lnet/minecraft/network/protocol/game/ClientboundGameEventPacket$Type;",
-    		"net.minecraft.client.multiplayer.ClientPacketListener.handleGameEvent:(Lnet/minecraft/network/protocol/game/ClientboundGameEventPacket;)V"
+                "net.minecraft.network.protocol.game.ClientboundGameEventPacket.getParam:()F",
+                "net.minecraft.network.protocol.game.ClientboundGameEventPacket.getEvent:()Lnet/minecraft/network/protocol/game/ClientboundGameEventPacket$Type;",
+                "net.minecraft.network.protocol.game.ClientboundGameEventPacket.WIN_GAME:Lnet/minecraft/network/protocol/game/ClientboundGameEventPacket$Type;",
+                "net.minecraft.client.multiplayer.ClientPacketListener.handleGameEvent:(Lnet/minecraft/network/protocol/game/ClientboundGameEventPacket;)V"
     	};
         FABRIC = new String[] {
                 "net.minecraft.class_2668.method_11492:()F",
@@ -76,7 +74,6 @@ public class ThePlugin implements IMixinConfigPlugin {
                 "net.minecraft.network.protocol.game.ClientboundGameEventPacket.m_132178_:()Lnet/minecraft/network/protocol/game/ClientboundGameEventPacket$Type;",
                 "net.minecraft.network.protocol.game.ClientboundGameEventPacket.f_132157_:Lnet/minecraft/network/protocol/game/ClientboundGameEventPacket$Type;",
                 "net.minecraft.client.multiplayer.ClientPacketListener.m_7616_:(Lnet/minecraft/network/protocol/game/ClientboundGameEventPacket;)V"
-
         };
     }
 }

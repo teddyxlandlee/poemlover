@@ -35,7 +35,7 @@ java.withSourcesJar()
 
 tasks.processResources {
     inputs.property("version", project.version)
-    filesMatching(setOf("fabric.mod.json", "META-INF/mods.toml")) {
+    filesMatching(setOf("fabric.mod.json", "META-INF/mods.toml", "META-INF/neoforge.mods.toml")) {
         expand("version" to project.version)
     }
 }

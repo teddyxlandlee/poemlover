@@ -1,0 +1,19 @@
+modLoader = 'javafml'   # No constructor needed
+loaderVersion = '[1,)'
+license = 'LGPL-3.0'
+
+[[mods]]
+modId = 'poemlover'
+version = "${version}"
+displayName = "Poem Lover"
+description = 'I love poems, so I want it to be displayed every time'
+modUrl = 'https://modrinth.com/mod/poemlover'
+authors = 'teddyxlandlee'
+displayURL = 'https://modrinth.com/mod/poemlover'
+
+[[mixins]]
+config = 'poemlover.mixins.json'
+
+[[dependencies.poemlover]]
+modId = 'minecraft'
+versionRange = '[1.18,1.23)'
